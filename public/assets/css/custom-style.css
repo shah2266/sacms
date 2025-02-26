@@ -1,0 +1,23 @@
+/* Color Picker*/
+.clr-picker {
+    width: 350px;
+    min-height: 350px;
+    z-index: 1060!important;
+}
+.clr-gradient {
+    height: 150px;
+}
+.clr-field button {
+    width: 22px;
+    height: 22px;
+    left: 5px;
+    right: auto;
+    border-radius: 5px;
+}
+.clr-field {
+    display: block!important;
+}
+.clr-field input {
+    padding-left: 36px;
+    max-width: 200px;
+}
