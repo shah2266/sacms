@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create();
         //UserTheme::factory()->create(); // Seed with default "Dark" theme
         $this->call([UserThemeSeeder::class]);
+        $this->call([ColorSettingSeeder::class]);
         Company::factory()->count(1)->create();
         Page::factory()->count(1)->create();
         Hero::factory()->count(1)->create();
