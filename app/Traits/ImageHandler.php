@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use App\Models\Company;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
@@ -20,7 +21,7 @@ trait ImageHandler
     protected function uploadImage($image, string $folder, int $width = null, int $height = null): string
     {
         $imageUniqueName = Str::random(40) . '.' . $image->getClientOriginalExtension();
-        $uploadPath = public_path("$folder/$imageUniqueName");
+        $uploadPath = $this->getStoragePath("$folder/$imageUniqueName");
 
         // If width and height are provided, resize accordingly, otherwise save original size
         if ($width && $height) {
@@ -44,9 +45,10 @@ trait ImageHandler
     {
         $image = $model::where('id', $id)->first();
         $imagePath = "$folder/$image->image";
+        $fullPath = $this->getStoragePath($imagePath);
 
-        if (File::exists(public_path($imagePath))) {
-            File::delete(public_path($imagePath));
+        if (File::exists($fullPath)) {
+            File::delete($fullPath);
         }
     }
 
@@ -61,7 +63,9 @@ trait ImageHandler
     protected function uploadDocument($file, $folder, $doc): string
     {
         $fileName = Str::random(10) . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path($folder . $doc), $fileName);
+        $destinationPath = $this->getStoragePath("$folder$doc");
+
+        $file->move($destinationPath, $fileName);
 
         return $fileName;
     }
@@ -78,9 +82,32 @@ trait ImageHandler
     {
         $document = $model::where('id', $id)->first();
         $documentPath = "$folder/$document->document";
+        $fullPath = $this->getStoragePath($documentPath);
 
-        if (File::exists(public_path($documentPath))) {
-            File::delete(public_path($documentPath));
+        if (File::exists($fullPath)) {
+            File::delete($fullPath);
         }
+    }
+
+    /**
+     *
+     * @param string $path
+     * @return string
+     */
+    protected function getStoragePath(string $path): string
+    {
+        return file_exists(public_path()) ? public_path($path) : $path;
+    }
+
+
+    protected function matchedCurrentHost(): bool
+    {
+        $company = Company::where('status', 1)->first();
+        return $this->normalizeUrl(config('app.url')) === $this->normalizeUrl($company->website);
+    }
+
+    protected function normalizeUrl($url): string
+    {
+        return preg_replace('/^www\./', '', parse_url($url, PHP_URL_HOST) ?? $url);
     }
 }

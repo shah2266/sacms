@@ -119,7 +119,8 @@ class ColorSettingController extends Controller
 
         $cssContent .= "}";
 
-        $cssPath = public_path('web/css/root.css');
-        File::put($cssPath, $cssContent);
+        $cssPath = 'web/css/root.css';
+        $fullPath = $this->getStoragePath($cssPath);
+        File::put($fullPath, $cssContent);
     }
 }
