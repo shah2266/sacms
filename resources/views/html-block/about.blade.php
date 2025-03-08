@@ -83,7 +83,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
-                        <img class="h-100" src="http://azizpolymer.local/web/img/block/2.jpg" alt="">
+                        <img class="h-100" src="http://sacms.local/web/img/block/2.jpg" alt="">
                     </div>
                 </div>
             </div>

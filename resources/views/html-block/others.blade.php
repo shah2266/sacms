@@ -24,7 +24,7 @@
                     <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-item">
                             <div class="team-img">
-                                <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
+                                <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
                                 <!--<div class="team-icon">
                                     <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-twitter"></i></a>
@@ -41,7 +41,7 @@
                     <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
                         <div class="team-item">
                             <div class="team-img">
-                                <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
+                                <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
                                 <!--<div class="team-icon">
                                     <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-twitter"></i></a>
@@ -58,7 +58,7 @@
                     <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
                         <div class="team-item">
                             <div class="team-img">
-                                <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
+                                <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
                                 <!--<div class="team-icon">
                                     <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-twitter"></i></a>
@@ -75,7 +75,7 @@
                     <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
                         <div class="team-item">
                             <div class="team-img">
-                                <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
+                                <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
                                 <!--<div class="team-icon">
                                     <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-twitter"></i></a>

@@ -24,7 +24,7 @@
                             <div class="row g-4">
                                 <div class="col-md-4">
                                     <div class="project-img">
-                                        <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100 pt-3 ps-3" alt="">
+                                        <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100 pt-3 ps-3" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -43,7 +43,7 @@
                             <div class="row g-4">
                                 <div class="col-md-4">
                                     <div class="project-img">
-                                        <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100 pt-3 ps-3" alt="">
+                                        <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100 pt-3 ps-3" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -62,7 +62,7 @@
                             <div class="row g-4">
                                 <div class="col-md-4">
                                     <div class="project-img">
-                                        <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100 pt-3 ps-3" alt="">
+                                        <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100 pt-3 ps-3" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -81,7 +81,7 @@
                             <div class="row g-4">
                                 <div class="col-md-4">
                                     <div class="project-img">
-                                        <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100 pt-3 ps-3" alt="">
+                                        <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100 pt-3 ps-3" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -142,7 +142,7 @@
                         <div class="tab-content">
                             <div id="ProjectsTab-1" class="tab-pane fade show p-0 active">
                                 <div class="projects-item">
-                                    <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
+                                    <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
                                     <div class="projects-content bg-white p-4">
                                         <h4 class="mb-3">Power Path Unveiling Our process</h4>
                                         <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
@@ -153,7 +153,7 @@
                             </div>
                             <div id="ProjectsTab-2" class="tab-pane fade show p-0">
                                 <div class="projects-item">
-                                    <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
+                                    <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
                                     <div class="projects-content bg-white p-4">
                                         <h4 class="mb-3">Electro Flow Decoding Our method</h4>
                                         <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
@@ -164,7 +164,7 @@
                             </div>
                             <div id="ProjectsTab-3" class="tab-pane fade show p-0">
                                 <div class="projects-item">
-                                    <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
+                                    <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
                                     <div class="projects-content bg-white p-4">
                                         <h4 class="mb-3">Energetic Engine Behind Scenes</h4>
                                         <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
@@ -175,7 +175,7 @@
                             </div>
                             <div id="ProjectsTab-4" class="tab-pane fade show p-0">
                                 <div class="projects-item">
-                                    <img src="http://azizpolymer.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
+                                    <img src="http://sacms.local/web/img/block/2.jpg" class="img-fluid w-100" alt="">
                                     <div class="projects-content bg-white p-4">
                                         <h4 class="mb-4">Watt Works Discover Operations</h4>
                                         <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.

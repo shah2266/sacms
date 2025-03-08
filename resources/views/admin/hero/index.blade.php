@@ -33,7 +33,6 @@
                                 <th>Page</th>
                                 <th>Title</th>
                                 <th>Sub title</th>
-                                <th>Description</th>
                                 <th>Type</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -70,7 +69,6 @@
                                         </span>
                                         {{ Str::limit($hero->sub_title, 30) }}
                                     </td>
-                                    <td>{!! Str::limit($hero->description, 30) !!}</td>
                                     <td>{{ $hero->hero_type }}</td>
                                     <td>
                                         <span class="{{ $hero->status ? 'text-success' : 'text-danger' }}">

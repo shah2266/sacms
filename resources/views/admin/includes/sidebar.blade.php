@@ -178,8 +178,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('admin/site-options/menus') OR request()->is('admin/site-options/menus/*')) ? 'active' : '' }}"
-                           href="{{ url('admin/site-options/menus') }}">
+                        <a class="nav-link {{ (request()->is('admin/footer') OR request()->is('admin/footer/*')) ? 'active' : '' }}"
+                           href="{{ url('admin/footer') }}">
                             Footer
                         </a>
                     </li>
