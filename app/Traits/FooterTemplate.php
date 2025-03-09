@@ -20,16 +20,26 @@ trait FooterTemplate
         ]);
     }
 
-    public function updateTemplate(Footer $template, $data)
+    public function updateTemplate(Footer $template, $data): bool
     {
-        $filePath = resource_path("views/admin/footer/templates/{$template->file_name}.blade.php");
-        File::put($filePath, $data['content']);
+        $oldFilePath = resource_path("views/admin/footer/templates/{$template->file_name}.blade.php");
+        $newFilePath = resource_path("views/admin/footer/templates/{$data['file_name']}.blade.php");
+
+        // Check if file_name is changed and rename the file
+        if ($template->file_name !== $data['file_name'] && File::exists($oldFilePath)) {
+            File::move($oldFilePath, $newFilePath);
+        } else {
+            // If the file name hasn't changed, just update its content
+            File::put($newFilePath, $data['content']);
+        }
 
         return $template->update([
             'name' => $data['name'],
+            'file_name' => $data['file_name'], // Update file name in the database
             'preview_image' => $data['preview_image'] ?? null,
         ]);
     }
+
 
     public function deleteTemplate(Footer $template)
     {

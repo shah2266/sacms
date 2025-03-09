@@ -1,47 +1,42 @@
+@php $page = 'footer' @endphp
 @extends('layouts.admin')
+@section('title', 'Edit Footer Template')
+
+@section('section-title', 'Edit Footer Template')
+@section('currentPage', 'Edit Footer')
 
 @section('content')
-<h2>Edit Footer Content - {{ $template->name }}</h2>
 
-<form id="footer-content-form">
-    @csrf
-    <div id="dynamic-fields">
-        @foreach($template->content ?? [] as $key => $value)
-            <div class="form-group">
-                <label>{{ ucfirst($key) }}</label>
-                <input type="text" name="content[{{ $key }}]" value="{{ $value }}" class="form-control">
+    @include('admin.includes.breadcrumb')
+    @include('admin.includes.display-message')
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h2>Edit Footer Template</h2>
+                        <form action="{{ route('admin.footer.update', $template->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="mb-3">
+                                <label>Name</label>
+                                <input type="text" name="name" class="form-control" value="{{ $template->name }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>File Name (Without Extension)</label>
+                                <input type="text" name="file_name" class="form-control" value="{{ $template->file_name }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Template Content (Blade Code)</label>
+                                <textarea name="content" class="form-control" id="description"  rows="6" required>{{ $content }}</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        @endforeach
+        </div>
     </div>
 
-    <button type="button" id="add-field-btn" class="btn btn-secondary">+ Add Field</button>
-    <button type="submit" class="btn btn-primary">Save Changes</button>
-</form>
-
-<script>
-    document.getElementById('footer-content-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        let formData = new FormData(this);
-
-        fetch('{{ route("admin.footer.update", $template->id) }}', {
-            method: 'POST',
-            body: formData,
-            headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' }
-        })
-        .then(response => response.json())
-        .then(data => alert(data.message))
-        .catch(error => console.error('Error:', error));
-    });
-
-    document.getElementById('add-field-btn').addEventListener('click', function() {
-        let fieldContainer = document.getElementById('dynamic-fields');
-        let fieldHTML = `
-            <div class="form-group">
-                <label>New Field</label>
-                <input type="text" name="content[new_field]" class="form-control">
-            </div>`;
-        fieldContainer.insertAdjacentHTML('beforeend', fieldHTML);
-    });
-</script>
 @endsection

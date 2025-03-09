@@ -12,6 +12,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\File;
 
 class FooterController extends Controller
 {
@@ -73,22 +74,28 @@ class FooterController extends Controller
      */
     public function edit(Footer $footer)
     {
+
+        $filePath = resource_path("views/admin/footer/templates/{$footer->file_name}.blade.php");
+
         return view('admin.footer.edit', [
             'template' => $footer,
-            'content' => file_get_contents(resource_path("views/admin/footer/templates/{$footer->file_name}.blade.php"))
+            'content' => File::exists($filePath) ? file_get_contents($filePath) : ''
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateFooterRequest  $request
+     * @param UpdateFooterRequest $request
      * @param Footer $footer
-     * @return Response
+     * @return RedirectResponse
      */
-    public function update(UpdateFooterRequest $request, Footer $footer)
+    public function update(UpdateFooterRequest $request, Footer $footer): RedirectResponse
     {
-        //
+        $data = $request->validated();
+        $this->updateTemplate($footer, $data);
+
+        return redirect()->route('admin.footer.index')->with('success', 'Footer Template Updated Successfully');
     }
 
     /**

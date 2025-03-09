@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateFooterRequest extends FormRequest
 {
@@ -11,9 +12,9 @@ class UpdateFooterRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -21,10 +22,18 @@ class UpdateFooterRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'name' => [
+                'required', 'string', 'max:255',
+                Rule::unique('footers', 'name')->ignore($this->route('footer')->id)
+            ],
+            'file_name' => [
+                'required','regex:/^[a-z0-9_-]+$/i',
+                Rule::unique('footers', 'file_name')->ignore($this->route('footer')->id)
+            ],
+            'content' => 'required|string',
         ];
     }
 }
