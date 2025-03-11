@@ -17,7 +17,7 @@
             <div class="float-right">
                 <a
                     class="btn btn-inverse-info btn-fw"
-                    href="{{ URL::to("admin/footer/$section") }}">
+                    href="{{ route('footer.index') }}">
                     Back
                 </a>
             </div>
@@ -25,9 +25,9 @@
 
         <div class="col-lg-12 grid-margin">
             <!-- form start -->
-            <form role="form" method="POST" action="{{ route("admin.$section.store") }}" enctype="multipart/form-data">
+            <form role="form" method="POST" action="{{ route("$section.store") }}" enctype="multipart/form-data">
                 <button type="submit" class="btn btn-inverse-primary btn-fw mb-2">Create {{ $section }}</button>
-                @include("admin.$section.form")
+                @include("web.$section.form")
                 <button type="submit" class="btn btn-inverse-primary btn-fw mt-2">Create {{ $section }}</button>
             </form>
         </div>

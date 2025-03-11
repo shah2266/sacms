@@ -34,6 +34,8 @@ class UpdateFooterRequest extends FormRequest
                 Rule::unique('footers', 'file_name')->ignore($this->route('footer')->id)
             ],
             'image'     => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'width'     => 'nullable|integer',
+            'height'    => 'nullable|integer',
             'content'   => 'required|string',
         ];
     }

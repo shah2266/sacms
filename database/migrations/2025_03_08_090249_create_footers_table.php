@@ -17,7 +17,9 @@ class CreateFootersTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('file_name')->unique();
-            $table->text('image')->nullable();
+            $table->string('image')->nullable();
+            $table->integer('width')->nullable();
+            $table->integer('height')->nullable();
             $table->json('content')->nullable();
             $table->integer('order')->default(0);
             $table->boolean('is_active')->default(false);

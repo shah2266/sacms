@@ -1,0 +1,1 @@
+<span class="text-center d-block py-2">&copy; {{ date('Y') }} {{$company->company_name}}. All rights reserved.</span>

@@ -25,7 +25,7 @@ class FooterController extends Controller
      */
     public function index()
     {
-        return view('admin.footer.index', [
+        return view('web.footer.index', [
             'templates' => Footer::orderBy('order')->get()
         ]);
     }
@@ -38,8 +38,9 @@ class FooterController extends Controller
     public function create()
     {
         $template = new Footer();
+        $content = null;
         
-        return view('admin.footer.create', compact('template'));
+        return view('web.footer.create', compact('template', 'content'));
     }
 
     /**
@@ -54,7 +55,7 @@ class FooterController extends Controller
 
         $this->createTemplate($data);
 
-        return redirect()->route('admin.footer.index')->with('success', 'Footer Template Created Successfully');
+        return redirect()->route('footer.index')->with('success', 'Footer Template Created Successfully');
     }
 
     /**
@@ -77,9 +78,9 @@ class FooterController extends Controller
     public function edit(Footer $footer)
     {
 
-        $filePath = resource_path("views/admin/footer/templates/{$footer->file_name}.blade.php");
+        $filePath = resource_path("views/web/footer/templates/{$footer->file_name}.blade.php");
 
-        return view('admin.footer.edit', [
+        return view('web.footer.edit', [
             'template' => $footer,
             'content' => File::exists($filePath) ? file_get_contents($filePath) : ''
         ]);
@@ -97,7 +98,7 @@ class FooterController extends Controller
         $data = $request->validated();
         $this->updateTemplate($footer, $data);
 
-        return redirect()->route('admin.footer.index')->with('success', 'Footer Template Updated Successfully');
+        return redirect()->route('footer.index')->with('success', 'Footer Template Updated Successfully');
     }
 
     /**
@@ -109,7 +110,7 @@ class FooterController extends Controller
     public function destroy(Footer $footer): RedirectResponse
     {
         $this->deleteTemplate($footer);
-        return redirect()->route('admin.footer.index')->with('success', 'Footer Template Deleted');
+        return redirect()->route('footer.index')->with('success', 'Footer Template Deleted');
     }
 
     public function activate($id): RedirectResponse

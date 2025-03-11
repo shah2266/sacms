@@ -27,6 +27,8 @@ class StoreFooterRequest extends FormRequest
             'name'      => 'required|unique:footers,name',
             'file_name' => 'required|unique:footers,file_name|regex:/^[a-z0-9_-]+$/i',
             'image'     => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'width'     => 'nullable|integer',
+            'height'    => 'nullable|integer',
             'content'   => 'required|string',
         ];
     }

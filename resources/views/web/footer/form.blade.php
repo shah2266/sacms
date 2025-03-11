@@ -82,7 +82,7 @@
 
                     <!--image-->
                     <div class="col-md-12 col-sm-12 mb-4">
-                        <label id="file">Upload hero section bg image:</label>
+                        <label id="file">Upload footer preview image:</label>
                         <input type="file" name="image" class="file-upload-default">
                         <div class="input-group col-xs-12">
                             <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
@@ -96,19 +96,54 @@
                             </span>
                         @endif
                     </div>
+                    <!--#image-->
 
+                    <div class="col-md-6 col-sm-6 mb-4">
+                        <label for="width">Width:</label>
+                        <input
+                                type="text"
+                                class="form-control {{ $errors->has('width') ? ' has-error':'' }}"
+                                name="width" id="width"
+                                value="{{old('width') ?? $company->width }}"
+                                placeholder="Default: 800px"
+                        >
+                        @if ($errors->has('width'))
+                            <span class="error-message" role="alert">
+                                {{ $errors->first('width') }}
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 mb-4">
+                        <label for="height">Height:</label>
+                        <input
+                                type="text"
+                                class="form-control {{ $errors->has('height') ? ' has-error':'' }}"
+                                name="height" id="height"
+                                value="{{old('height') ?? $company->height }}"
+                                placeholder="Default: 300px;"
+                        >
+                        @if ($errors->has('height'))
+                            <span class="error-message" role="alert">
+                                {{ $errors->first('height') }}
+                            </span>
+                        @endif
+                    </div>
 
                     @if(isset($template->image))
                         <div class="col-md-12 col-sm-12 text-center">
-                            <div class="img-box">
-                                <a href="{{ asset('web/img/hero/' . $template->image) }}">
-                                    <img src="{{ asset('web/img/hero/' . $template->image) }}" alt=" {{ __('Image missing') }}" loading="lazy">
+                            <div>
+                                <a href="{{ asset('web/img/footer_preview_image/' . $template->image) }}">
+                                    <img
+                                        src="{{ asset('web/img/footer_preview_image/' . $template->image) }}"
+                                        alt=" {{ __('Image missing') }}"
+                                        loading="lazy"
+                                        width="600px"
+                                        class="img-fluid">
                                 </a>
                             </div>
                         </div>
                     @endif
-                    <!--#image-->
-
 
                 </div>
 

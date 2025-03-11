@@ -9,7 +9,7 @@ class Footer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'file_name', 'image', 'content', 'order', 'is_active'];
+    protected $fillable = ['name', 'file_name', 'image', 'width', 'height', 'content', 'order', 'is_active'];
 
     protected $casts = [
         'content' => 'array', // Automatically converts JSON to an array

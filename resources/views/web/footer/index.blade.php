@@ -20,7 +20,7 @@
                         <p class="float-right">
                             <a
                                 class="btn btn-primary btn-fw"
-                                href="{{ route( 'admin.footer.create' ) }}">
+                                href="{{ route( 'footer.create' ) }}">
                                 + {{ ucfirst($page) }} builder
                             </a>
                         </p>
@@ -37,7 +37,7 @@
                             @foreach($templates as $template)
                                 <tr data-id="{{ $template->id }}">
                                     <td>{{ $template->name }}</td>
-                                    <td><img src="{{ $template->preview_image }}" width="50"></td>
+                                    <td><img src="{{ asset('web/img/footer_preview_image/'.$template->image) }}" width="50" alt="Preview image"></td>
                                     <td>
                                         @if($template->is_active)
                                             <span class="badge bg-success">Active</span>
@@ -46,9 +46,9 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a class="btn btn-sm btn-warning edit-btn" href="{{ url('admin/footer/edit/'. $template->id ) }}">Edit</a>
+                                        <a class="btn btn-sm btn-warning edit-btn" href="{{ url('admin/site-options/footer/'.$template->id.'/edit') }}">Edit</a>
 {{--                                        <a class="btn btn-sm btn-danger delete-btn" href="{{ url('admin/footer/delete/'. $template->id ) }}">Delete</a>--}}
-                                        <form action="{{ route('admin.footer.destroy', $template->id) }}" method="POST" style="display:inline;">
+                                        <form action="{{ route('footer.destroy', $template->id) }}" method="POST" style="display:inline;">
                                             @csrf @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                         </form>
@@ -62,7 +62,7 @@
                             document.querySelectorAll('.activate-btn').forEach(button => {
                                 button.addEventListener('click', function() {
                                     let id = this.dataset.id;
-                                    fetch(`/admin/footer/activate/${id}`, { method: 'GET' })
+                                    fetch(`/admin/site-options/footer/activate/${id}`, { method: 'GET' })
                                         .then(response => response.json())
                                         .then(data => {
                                             if (data.success) location.reload();
@@ -74,7 +74,7 @@
                                 animation: 150,
                                 onEnd: function() {
                                     let order = [...document.querySelectorAll('#sortable tr')].map(el => el.dataset.id);
-                                    fetch(`/admin/footer/update-order`, {
+                                    fetch(`/admin/site-options/footer/update-order`, {
                                         method: 'POST',
                                         headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
                                         body: JSON.stringify({ order })
