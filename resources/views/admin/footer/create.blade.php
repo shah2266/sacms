@@ -1,41 +1,36 @@
-@php $page = 'footer' @endphp
+@php $section = 'footer' @endphp
 @extends('layouts.admin')
-@section('title', $page)
+@section('title', $section)
 
-@section('section-title', ucfirst($page) . " manager")
-@section('currentPage', ucfirst($page))
+@section('section-title', ucfirst($section) . " manager")
+@section('currentPage', ucfirst($section))
 
 @section('content')
 
     @include('admin.includes.breadcrumb')
     @include('admin.includes.display-message')
-    <!-- Data display Area -->
+
+
     <div class="row">
-        <!-- Page list -->
-        <div class="col-lg-12 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="container">
-                        <h2>Create Footer Template</h2>
-                        <form action="{{ route('admin.footer.store') }}" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label>Name</label>
-                                <input type="text" name="name" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label>File Name (Without Extension)</label>
-                                <input type="text" name="file_name" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label>Template Content (Blade Code)</label>
-                                <textarea name="content" class="form-control" rows="6" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </form>
-                    </div>
-                </div>
+
+        <div class="col-lg-12 grid-margin">
+            <div class="float-right">
+                <a
+                    class="btn btn-inverse-info btn-fw"
+                    href="{{ URL::to("admin/footer/$section") }}">
+                    Back
+                </a>
             </div>
         </div>
+
+        <div class="col-lg-12 grid-margin">
+            <!-- form start -->
+            <form role="form" method="POST" action="{{ route("admin.$section.store") }}" enctype="multipart/form-data">
+                <button type="submit" class="btn btn-inverse-primary btn-fw mb-2">Create {{ $section }}</button>
+                @include("admin.$section.form")
+                <button type="submit" class="btn btn-inverse-primary btn-fw mt-2">Create {{ $section }}</button>
+            </form>
+        </div>
     </div>
+
 @endsection

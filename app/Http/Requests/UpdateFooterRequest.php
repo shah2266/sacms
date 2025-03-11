@@ -25,7 +25,7 @@ class UpdateFooterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => [
+            'name'      => [
                 'required', 'string', 'max:255',
                 Rule::unique('footers', 'name')->ignore($this->route('footer')->id)
             ],
@@ -33,7 +33,8 @@ class UpdateFooterRequest extends FormRequest
                 'required','regex:/^[a-z0-9_-]+$/i',
                 Rule::unique('footers', 'file_name')->ignore($this->route('footer')->id)
             ],
-            'content' => 'required|string',
+            'image'     => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'content'   => 'required|string',
         ];
     }
 }

@@ -24,9 +24,10 @@ class StoreFooterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|unique:footers,name',
+            'name'      => 'required|unique:footers,name',
             'file_name' => 'required|unique:footers,file_name|regex:/^[a-z0-9_-]+$/i',
-            'content' => 'required|string',
+            'image'     => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'content'   => 'required|string',
         ];
     }
 }

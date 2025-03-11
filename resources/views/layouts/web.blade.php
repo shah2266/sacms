@@ -32,7 +32,8 @@
 
 
     <!-- Footer Start -->
-    @include('web.includes.footer')
+    {{--@include('web.includes.footer')--}}
+    @include("admin.footer.templates.{$footer->file_name}")
     <!-- Footer End -->
 
     <!-- back-to-top btn -->

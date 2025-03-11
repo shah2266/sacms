@@ -37,7 +37,9 @@ class FooterController extends Controller
      */
     public function create()
     {
-        return view('admin.footer.create');
+        $template = new Footer();
+        
+        return view('admin.footer.create', compact('template'));
     }
 
     /**
@@ -102,10 +104,17 @@ class FooterController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Footer $footer
-     * @return Response
+     * @return RedirectResponse
      */
-    public function destroy(Footer $footer)
+    public function destroy(Footer $footer): RedirectResponse
     {
-        //
+        $this->deleteTemplate($footer);
+        return redirect()->route('admin.footer.index')->with('success', 'Footer Template Deleted');
+    }
+
+    public function activate($id): RedirectResponse
+    {
+        $this->activateTemplate($id);
+        return redirect()->back()->with('success', 'Footer template activated successfully!');
     }
 }

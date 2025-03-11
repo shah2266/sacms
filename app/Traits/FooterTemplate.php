@@ -15,7 +15,7 @@ trait FooterTemplate
         return Footer::create([
             'name' => $data['name'],
             'file_name' => $data['file_name'],
-            'preview_image' => $data['preview_image'] ?? null,
+            'image' => $data['image'] ?? null,
             'order' => Footer::max('order') + 1,
         ]);
     }
@@ -35,8 +35,8 @@ trait FooterTemplate
 
         return $template->update([
             'name' => $data['name'],
-            'file_name' => $data['file_name'], // Update file name in the database
-            'preview_image' => $data['preview_image'] ?? null,
+            'file_name' => $data['file_name'],
+            'image' => $data['image'] ?? null,
         ]);
     }
 

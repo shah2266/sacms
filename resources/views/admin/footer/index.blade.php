@@ -47,7 +47,11 @@
                                     </td>
                                     <td>
                                         <a class="btn btn-sm btn-warning edit-btn" href="{{ url('admin/footer/edit/'. $template->id ) }}">Edit</a>
-                                        <button class="btn btn-sm btn-danger delete-btn">Delete</button>
+{{--                                        <a class="btn btn-sm btn-danger delete-btn" href="{{ url('admin/footer/delete/'. $template->id ) }}">Delete</a>--}}
+                                        <form action="{{ route('admin.footer.destroy', $template->id) }}" method="POST" style="display:inline;">
+                                            @csrf @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
