@@ -47,7 +47,9 @@ trait FooterTemplate
             File::put($newFilePath, $data['content']);
         }
 
-        if(File::isFile($data['image'])) {
+        $image = $template->image;
+
+        if(isset($data['image']) && File::isFile($data['image'])) {
             $this->deleteImage($template->id, $this->folder, Footer::class);
             $image = $this->uploadImage($data['image'], $this->folder, $data['width'], $data['height']);
         }
@@ -55,7 +57,7 @@ trait FooterTemplate
         return $template->update([
             'name' => $data['name'],
             'file_name' => $data['file_name'],
-            'image' => $image ?? null,
+            'image' => $image,
         ]);
     }
 

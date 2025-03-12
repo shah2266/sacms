@@ -40,10 +40,10 @@
                         @endif
                     </div>
 
-                    <div class="col-md-12 col-sm-12 mb-4">
+                    <div class="col-md-12 col-sm-12">
                         <label for="content">Template Content (Blade Code):</label>
-                        <textarea name="content" id="content" cols="30" rows="3" class="form-control {{ $errors->has('content') ? ' has-error':'' }}"
-                                  placeholder="Enter short description"
+                        <textarea name="content" id="content" cols="30" rows="15" class="form-control {{ $errors->has('content') ? ' has-error':'' }}"
+                                  placeholder="Template Content"
                         >{!!  old('content') ?? $content !!}</textarea>
                         @if ($errors->has('content'))
                             <span class="error-message" role="alert">

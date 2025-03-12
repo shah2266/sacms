@@ -99,20 +99,6 @@ Route::group([
     Route::get('/contact', [FunctionController::class, 'showMessages']);
 });
 
-//Route::prefix('admin/footer')->name('admin.footer.')->group(function () {
-//    Route::get('/', [FooterController::class, 'index'])->name('index');
-//    Route::get('/create', [FooterController::class, 'create'])->name('create');
-//    Route::post('/store', [FooterController::class, 'store'])->name('store');
-//    Route::get('/edit/{footer}', [FooterController::class, 'edit'])->name('edit');
-//    Route::put('/update/{footer}', [FooterController::class, 'update'])->name('update');
-//    Route::delete('/delete/{footer}', [FooterController::class, 'destroy'])->name('destroy');
-//    //Route::get('/activate/{id}', [FooterController::class, 'activate'])->name('activate');
-//
-//    Route::post('/update-order', [FooterController::class, 'updateOrder'])->name('updateOrder');
-//    Route::get('/activate/{id}', [FooterController::class, 'activate'])->name('activate');
-//});
-
-
 /** Front-End routes **/
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/{slug}', [PageController::class, 'show']);

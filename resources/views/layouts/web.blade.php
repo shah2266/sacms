@@ -33,7 +33,7 @@
 
     <!-- Footer Start -->
     {{--@include('web.includes.footer')--}}
-    @include("web.footer.templates." . ($footer->file_name ?? 'default_footer'))
+    @include("web.footer.templates." . ($footer->file_name ?? 'default_footer_bk'))
     <!-- Footer End -->
 
     <!-- back-to-top btn -->

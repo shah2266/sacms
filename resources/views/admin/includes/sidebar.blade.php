@@ -170,12 +170,12 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link {{ (request()->is('admin/site-options/menus') OR request()->is('admin/site-options/menus/*')) ? 'active' : '' }}"
                            href="{{ url('admin/site-options/menus') }}">
                             Header
                         </a>
-                    </li>
+                    </li>-->
 
                     <li class="nav-item">
                         <a class="nav-link {{ (request()->is('admin/site-options/footer') OR request()->is('admin/site-options/footer/*')) ? 'active' : '' }}"
