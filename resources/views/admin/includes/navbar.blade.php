@@ -15,17 +15,17 @@
             </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item nav-settings d-none d-lg-block">
+            <li class="nav-item nav-settings">
                 <a class="nav-link" href="{{ url('/home') }}" title="Dashboard">
                     <i class="mdi mdi-speedometer"></i>
                 </a>
             </li>
-            <li class="nav-item nav-settings d-none d-lg-block">
+            <li class="nav-item nav-settings">
                 <a class="nav-link" href="{{ url('/') }}" title="View website" target="_blank">
                     <i class="mdi mdi-eye-outline"></i>
                 </a>
             </li>
-            <li class="nav-item nav-settings d-none d-lg-block">
+            <li class="nav-item nav-settings ">
                 <a id="theme-toggle" class="nav-link theme-toggle">
                     @if(isset(Auth::user()->theme->id))
                         @if(Auth::user()->theme->id == 1 or strtolower(Auth::user()->theme->theme_name) == 'dark')
