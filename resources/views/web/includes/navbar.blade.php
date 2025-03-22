@@ -13,9 +13,19 @@
                 <div class="navbar-nav mx-0 mx-lg-auto">
 
                     @foreach ($menuItems as $menu)
+                        @php
+                            // Check if the current URL is the home URL
+                            $isActive = request()->is('/') && $menu->url == '' || request()->is($menu->url);
+
+                            // Check if any child of this parent is active
+                            $hasActiveChild = $menu->children->contains(function ($submenu) {
+                                return request()->is($submenu->url);
+                            });
+                        @endphp
+
                         @if ($menu->children->isNotEmpty())
                             {{-- Parent with children (Dropdown) --}}
-                            <div class="nav-item dropdown">
+                            <div class="nav-item dropdown {{ $isActive || $hasActiveChild ? 'active' : '' }}">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                     {{ $menu->title }}
                                 </a>
@@ -23,20 +33,23 @@
                                     @foreach ($menu->children as $submenu)
                                         {{-- Ensure child has a valid parent before rendering --}}
                                         @if ($submenu->parent_id == $menu->id)
-                                            <a href="{{ url($submenu->url) }}" class="dropdown-item">{{ $submenu->title }}</a>
+                                            <a href="{{ url($submenu->url) }}" class="dropdown-item {{ request()->is($submenu->url) ? 'active' : '' }}">
+                                                {{ $submenu->title }}
+                                            </a>
                                         @endif
                                     @endforeach
                                 </div>
                             </div>
                         @elseif ($menu->parent_id == null)
                             {{-- Parent with no children (Regular Menu Item) --}}
-                            <a href="{{ url($menu->url) }}" class="nav-item nav-link {{ request()->is($menu->url) ? 'active' : '' }}">
+                            <a href="{{ url($menu->url) }}" class="nav-item nav-link {{ $isActive ? 'active' : '' }}">
                                 {{ $menu->title }}
                             </a>
                         @endif
                     @endforeach
 
                 </div>
+
                 <div class="nav-btn px-3">
                     <a href="/contact" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Contact</a>
                 </div>

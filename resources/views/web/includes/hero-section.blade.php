@@ -7,8 +7,16 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-7 animated fadeIn">
                         <div class="text-sm-center text-md-start">
-                            <h4 class="text-uppercase fw-bold mb-4 wow fadeInDown">{{ Str::limit($slider->title, 30) }}</h4>
-                            <h1 class="display-3 mb-4 wow fadeInDown">{{ Str::words($slider->sub_title, 6, '') }}</h1>
+                            <h4
+                               class="text-uppercase fw-bold mb-4 wow fadeInDown"
+                               style="color: {{ $slider->title_color }} !important;">
+                                {{ Str::limit($slider->title, 30) }}
+                            </h4>
+                            <h1
+                                class="display-3 mb-4 wow fadeInDown"
+                                style="color: {{ $slider->sub_title_color }} !important;">
+                                {{ Str::words($slider->sub_title, 6, '') }}
+                            </h1>
                             <p class="mb-5 fs-5">{!! Str::words($slider->short_description, 12, '') !!} </p>
                             <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
                                 @if(isset($slider->link1))
