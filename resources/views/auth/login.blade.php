@@ -4,12 +4,8 @@
 
 <div class="container">
 
-{{--    <h1>{{ config('app.name', 'Laravel') }}</h1>--}}
-
-
-    <h1 class="login-title"> Admin panel</h1>
-
     <section class="login">
+        <h1 class="login-title"> Admin panel</h1>
         <form class="login-form" method="POST" action="{{ route('login') }}">
             @csrf
             <div class="form-group">
@@ -52,5 +48,6 @@
             </div>
         </form>
     </section>
+
 </div>
 @endsection
