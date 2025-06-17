@@ -1,6 +1,6 @@
 ## Project
 
-- **SA CMS**
+- **Template based Content Management System (CMS)**
 
 ## Technologies Used
 
