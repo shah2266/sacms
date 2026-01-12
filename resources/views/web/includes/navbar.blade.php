@@ -49,10 +49,7 @@
                     @endforeach
 
                 </div>
-
-                <div class="nav-btn px-3">
-                    <a href="/contact" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Contact</a>
-                </div>
+                
             </div>
         </nav>
     </div>
